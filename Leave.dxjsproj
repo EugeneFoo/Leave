@@ -9,10 +9,10 @@
     <ApplicationPage>index.html</ApplicationPage>
     <RootNamespace>Leave</RootNamespace>
     <Name>Leave</Name>
-    <KeyIpaPath>certificates\ios_certificate.p12</KeyIpaPath>
-    <ProvisionProfile>certificates\leave.mobileprovision</ProvisionProfile>
+    <KeyIpaPath>..\certificates\ios_certificate.p12</KeyIpaPath>
+    <ProvisionProfile>..\certificates\leave.mobileprovision</ProvisionProfile>
     <IpaPrivateKeyFile>certificates\ios_private_key.txt</IpaPrivateKeyFile>
-    <TemplateFileIpa>..\Leave.ipa</TemplateFileIpa>
+    <TemplateFileIpa>..\..\Leave.ipa</TemplateFileIpa>
     <UseCustomTemplateNameIpa>True</UseCustomTemplateNameIpa>
     <IpaDevicesFamily>Universal</IpaDevicesFamily>
     <BundleIdentifier>com.jabil.leave</BundleIdentifier>
