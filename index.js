@@ -34,13 +34,29 @@ $(function() {
         }
     }
 
+    function findController(name, controllers) {
+        var result = $.grep(controllers, function (item, index) {
+            return item.controller.name == name;
+        });
+        return result.length ? result[0].controller : null;
+    }
+
+    var layoutSet = [];
+    layoutSet.push.apply(layoutSet, DevExpress.framework.html.layoutSets["navbar"]);
+    layoutSet.push.apply(layoutSet, DevExpress.framework.html.layoutSets["empty"]);
+
     Leave.app = new DevExpress.framework.html.HtmlApplication({
         namespace: Leave,
-        layoutSet: DevExpress.framework.html.layoutSets[Leave.config.layoutSet],
+        layoutSet: layoutSet,
         navigation: Leave.config.navigation,
         commandMapping: Leave.config.commandMapping
     });
     Leave.app.router.register(":view/:id", { view: "login", id: undefined });
     Leave.app.on("navigatingBack", onNavigatingBack);
+    Leave.app.on("resolveLayoutController", function (args) {
+        if (args.viewInfo.viewName == 'login') {
+            args.layoutController = findController('empty', args.availableLayoutControllers);
+        }
+    });
     Leave.app.navigate();
 });

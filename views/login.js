@@ -11,13 +11,10 @@
     var viewModel = {
 
         token: ko.observable(''),
-        expiredate: ko.observable(''),
-        tokenval: ko.observable(''),
 
         // Shows user authentication dialog if required.
         login: function (authCompletedCallback) {
-          
-           
+
             var authContext = new Microsoft.ADAL.AuthenticationContext(authority);
             authContext.tokenCache.readItems().then(function (items) {
                 if (items.length > 0) {
@@ -30,41 +27,31 @@
                     // We require user credentials so triggers authentication dialog
                     authContext.acquireTokenAsync(resourceUri, clientId, redirectUri)
                     .then(function(authResponse) {
-
                         viewModel.token(authResponse.accessToken);
-                        viewModel.expiredate(authResponse.expiresOn);
-                        viewModel.tokenval(JSON.stringify(authResponse));
+                        Leave.app.navigate('home', { root: true });
+                       
+                        //var client = MicrosoftGraph.Client.init({
+                        //    authProvider: function(done) {
+                        //        done(null, authResponse.accessToken);
+                        //    }
+                        //});
 
-                        var client = MicrosoftGraph.Client.init({
-                            authProvider: function(done) {
-                                done(null, authResponse.accessToken);
-                            }
-                        });
-
-                        client
-                         .api('/me')
-                         .select("displayName")
-                         .get((err, res) => {
-                             if (err) {
-                                 alert(JSON.stringify(err));
-                                 return;
-                             }
-                             alert(res);
-                         });
-
-
+                        //client
+                        // .api('/me')
+                        // .select("displayName")
+                        // .get((err, res) => {
+                        //     if (err) {
+                        //         alert(JSON.stringify(err));
+                        //         return;
+                        //     }
+                        //     alert(res);
+                        // });
                     }, function(err) {
-                        DevExpress.ui.notify("Failed to authenticate: " + err, 'error', 3000);
-                      
+                        DevExpress.ui.notify("Failed to authenticate: " + err, 'error', 3000);                   
                     });
                 });
             });
-
         },
-
-        viewShown: function () {
-
-        }
     };
 
     return viewModel;

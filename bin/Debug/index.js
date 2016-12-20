@@ -9,7 +9,7 @@ $(function() {
     $(document).on("deviceready", function () {
         navigator.splashscreen.hide();
         if(window.devextremeaddon) {
-            window.devextremeaddon.setup();
+            window.devextremeaddon.setup(); 
         }
         $(document).on("backbutton", function () {
             DevExpress.processHardwareBackButton();

@@ -1,20 +1,11 @@
 <div data-options="dxView : { name: 'login', title: 'login' } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
-        <div data-bind="dxButton: { text: 'Login', onClick: login }"></div>
        
-        <div class="dx-field">
-            <div class="dx-field-label">Token</div>
-            <div class="dx-field-value">
-                <div data-bind="dxTextArea: { value: token }"></div>
+        <div class="Aligner">
+            <div class="Aligner-item">
+                <div data-bind="dxButton: { text: 'Login', onClick: login }"></div>
             </div>
         </div>
-
-        <div class="dx-field">
-            <div class="dx-field-label">Expired Date</div>
-            <div class="dx-field-value">
-                <div data-bind="dxTextArea: { value: expiredate }"></div>
-            </div>
-        </div>
-        <div data-bind="dxTextArea: { height: 90 + '%', value: tokenval }"></div>
+        
      </div>
 </div>

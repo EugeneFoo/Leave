@@ -47,6 +47,9 @@
     <Content Include="js\ms-graph.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\leave.css">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\login.dxview">
       <SubType>Content</SubType>
     </Content>
