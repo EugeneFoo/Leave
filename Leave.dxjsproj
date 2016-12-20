@@ -47,7 +47,13 @@
     <Content Include="cordova.js" />
     <Content Include="index.html" />
     <Content Include="index.css" />
+    <Content Include="js\mobile-detect.min.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="js\ms-graph.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="leave.html">
       <SubType>Content</SubType>
     </Content>
     <Content Include="leave.plist">
