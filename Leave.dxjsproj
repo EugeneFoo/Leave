@@ -40,6 +40,9 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="images\smartphone.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="index.js" />
     <Content Include="cordova.js" />
     <Content Include="index.html" />
@@ -145,6 +148,7 @@
     <Folder Include="layouts\Simple\" />
     <Folder Include="layouts\SlideOut\" />
     <Folder Include="layouts\Split\" />
+    <Folder Include="images" />
     <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
