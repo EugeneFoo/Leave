@@ -47,6 +47,9 @@
     <Content Include="js\ms-graph.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="leave.plist">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\leave.css">
       <SubType>Content</SubType>
     </Content>
